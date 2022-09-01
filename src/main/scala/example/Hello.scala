@@ -17,15 +17,15 @@ object Hello {
       .set("spark.dynamicAllocation.executorIdleTimeout", "120s")
       .set("spark.dynamicAllocation.schedulerBacklogTimeout", "1s")
       .set("spark.executor.cores", "1")
-      .set("spark.executor.memory", "512m")
+      .set("spark.executor.memory", "1024m")
 
     val sparkContext = new SparkContext(conf)
 
     println("Starting processing")
-    sparkContext.parallelize(0 to 11, 11)
+    sparkContext.parallelize(0 to 30, 30)
       .foreach(item => {
         // for each number wait 3 seconds
-        Thread.sleep(10000)
+        Thread.sleep(30000)
       })
     println("Terminating processing")
   }
