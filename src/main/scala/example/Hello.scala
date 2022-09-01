@@ -16,8 +16,8 @@ object Hello {
       .set("spark.dynamicAllocation.initialExecutors", "1")
       .set("spark.dynamicAllocation.executorIdleTimeout", "120s")
       .set("spark.dynamicAllocation.schedulerBacklogTimeout", "1s")
-      .set("spark.executor.cores", "1")
-      .set("spark.executor.memory", "1024m")
+      .set("spark.executor.cores", "2")
+      .set("spark.executor.memory", "15g")
 
     val sparkContext = new SparkContext(conf)
 
